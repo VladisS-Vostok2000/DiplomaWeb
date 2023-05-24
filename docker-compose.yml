@@ -1,0 +1,28 @@
+version: '3'
+services:
+  diplomaweb:
+    container_name: DiplomaWebContainer 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:5171"
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_URLS: "http://0.0.0.0:5171"  
+      ConnectionStrings__DefaultConnection: "Host=db;Database=DiplomaWeb;Username=postgres;Password=postgres"
+  db:
+    container_name: db
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "55432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
