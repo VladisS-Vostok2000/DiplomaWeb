@@ -7,7 +7,7 @@ This api project can handle notes with its versions as branch. You may push and 
 # Installing
 You may test this application by docker.
 
-Please use this [release](https://github.com/VladisS-Vostok2000/DiplomaWeb/releases/tag/docker-compose-latest) to download
+Please use this [release](https://github.com/VladisS-Vostok2000/DiplomaWeb/releases/tag/Docker-compose) to download
 `docker-compose.yml` file.
 
 Verify you dont have already "db" container.
